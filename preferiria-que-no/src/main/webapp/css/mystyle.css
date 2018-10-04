@@ -1,0 +1,175 @@
+@charset "ISO-8859-1";
+body{
+	background-image: url("/images/background.jpg");
+	background-repeat: repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+#header {
+	margin: auto;
+	padding-left: 30%;
+	padding-right: 30%;
+	width: 40%;
+}
+h1{	
+	color: #cc0000;
+	margin: auto;
+	text-align: center;
+	font-family: "forte";
+	font-size: 4.5rem;
+}
+.nombreRest{	
+	text-decoration: none;
+	color: black;
+	margin: auto;
+	padding: 0% 10% 0% 10%;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-size: 2rem;
+}
+#searchDiv {
+	padding: 0px 0px 0px 10%;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+#location{
+	width: 75%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+#buttom{
+	font-weight: bold;
+	text-align:center;
+	position: relative;
+	left: 35%;
+	box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    margin:auto;
+}
+
+#category{
+	width: 58%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+p{
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+#imagenes {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    float: left;
+    padding-right:50px;
+}
+#busquedas{
+	color: black;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+#imagesRestaurant{
+	display: inline-block;
+	text-align: center;
+}
+#imagesRestaurant img{
+	width: 20%;
+	padding:1%;
+}
+#informacion{
+	width:50%;
+	float: right;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+#botones{
+	width:50%;
+	float:right;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;	
+}
+a{
+	color: #cc0000;
+	font-weight: bold;
+	font-size: 1.25rem;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+#botones button, input{
+	color: black;
+	text-align:center;
+	box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+#mapa{
+	float: left;
+	width:40%;
+	margin-left: 20px;
+}
+#imgmapa{
+	display:block;
+	width:500px;
+	height:350px;
+	frameborder: 0px;
+	border:0;
+}
+ul {
+    list-style-type: disc;
+}
+ol{
+	list-style-type: circle;
+	list-style-position: inside;
+}
+#calendar{
+	font-weight: bold;
+	margin-bottom: 100px;
+	padding: 35px 100px 100px 100px;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+#calendar fieldset{
+	border-style:none;
+}
+#calendar .col-25{
+	float: left;
+	display:inline;
+	width:20%;
+}
+#calendar .col-75{
+	display:inline;
+	width:50%;
+}
+#calendar .ancho{
+	width:50%;
+}

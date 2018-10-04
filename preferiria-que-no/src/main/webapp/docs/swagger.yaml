@@ -1,0 +1,272 @@
+---
+swagger: "2.0"
+info:
+  description: Se trata de una API que integra los restaurantes de una ciudad, con la misma.
+  version: 1.0.0
+  title: Preferiria Que No
+  contact:
+    email: prefeririaqueno@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /prefeririaqueno/preferiria-que-no/1.0.0
+tags:
+- name: restaurants
+  description: Restaurante
+- name: ciudades
+  description: Ciudad
+schemes:
+- https
+paths:
+  /restaurants:
+    get:
+      tags:
+      - restaurants
+      summary: Lista de todos los restaurantes
+      description: Devuelve una lista con todos los restaurantes.
+      operationId: getAllRestaurantes
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Restaurante'
+        400:
+          description: Lista vacía
+    post:
+      tags:
+      - restaurants
+      summary: Añadir un restaurante
+      description: Añade un restaurante.
+      operationId: addRestaurante
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Restaurante creado
+        required: true
+        schema:
+          $ref: '#/definitions/Restaurante'
+      responses:
+        default:
+          description: Operacion realizada con éxito
+    put:
+      tags:
+      - restaurants
+      summary: Actualizar restaurante
+      description: Actualiza un restaurante con unos determinados parámetros.
+      operationId: updateRestaurante
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: id
+        description: Actualizado el restaurante
+        required: true
+        schema:
+          $ref: '#/definitions/Restaurante'
+      responses:
+        400:
+          description: Id no valido
+        404:
+          description: Id no encontrado
+  /restaurants/{id}:
+    get:
+      tags:
+      - restaurants
+      summary: Obtener un restaurante por id
+      description: ""
+      operationId: getRestaurante
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: 'El id del restaurante. '
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operación realizada con éxito
+          schema:
+            $ref: '#/definitions/Restaurante'
+        404:
+          description: El restaurante con el id no ha sido encontrado.
+    delete:
+      tags:
+      - restaurants
+      summary: Borrar restaurante
+      description: Borra un restaurante con un determinado id.
+      operationId: removeRestaurante
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: El restaurante es borrado
+        required: true
+        type: string
+      responses:
+        400:
+          description: Id no válido
+        404:
+          description: Id no encontrado
+  /ciudades:
+    get:
+      tags:
+      - ciudades
+      summary: Lista de todas las ciudades
+      description: Devuelve una lista con todas las ciudades.
+      operationId: getAllCiudades
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Ciudad'
+        400:
+          description: Lista vacía
+    post:
+      tags:
+      - ciudades
+      summary: Añadir una ciudad
+      description: Añade una ciudad.
+      operationId: addCiudad
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Ciudad creada
+        required: true
+        schema:
+          $ref: '#/definitions/Ciudad'
+      responses:
+        default:
+          description: Operacion realizada con éxito
+    put:
+      tags:
+      - ciudades
+      summary: Actualizar ciudad
+      description: Actualiza una ciudad con unos determinados parámetros.
+      operationId: updateCiudad
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: id
+        description: Actualizada la ciudad
+        required: true
+        schema:
+          $ref: '#/definitions/Ciudad'
+      responses:
+        400:
+          description: Id no válido
+        404:
+          description: Id no encontrado
+  /ciudades/{id}:
+    get:
+      tags:
+      - ciudades
+      summary: Obtener una ciudad por id
+      description: ""
+      operationId: getCiudad
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: El id de la ciudad.
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operación realizada con éxito
+          schema:
+            $ref: '#/definitions/Ciudad'
+        404:
+          description: La ciudad con el id ha sido encontrada.
+    delete:
+      tags:
+      - ciudades
+      summary: Borrar ciudad
+      description: Borra una ciudad con un determinado id.
+      operationId: removeCiudad
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: La ciudad es borrada
+        required: true
+        type: string
+      responses:
+        400:
+          description: Id no válido
+        404:
+          description: Id no encontrado
+definitions:
+  Restaurante:
+    required:
+    - categoria
+    - direccion
+    - id
+    - nombre
+    properties:
+      id:
+        type: string
+        example: r1
+      nombre:
+        type: string
+        example: Eslava
+      categoria:
+        type: string
+        example: Bar de tapas
+      direccion:
+        type: string
+        example: Calle Eslava 3 41002 Sevilla
+    example:
+      categoria: Bar de tapas
+      direccion: Calle Eslava 3 41002 Sevilla
+      id: r1
+      nombre: Eslava
+  Ciudad:
+    required:
+    - descripcion
+    - id
+    - nombre
+    - restaurantes
+    properties:
+      id:
+        type: string
+        example: c1
+      nombre:
+        type: string
+        example: Sevilla
+      descripcion:
+        type: string
+        example: Ciudad de Sevilla
+      restaurantes:
+        $ref: '#/definitions/Restaurante'
+    example:
+      descripcion: Ciudad de Sevilla
+      id: c1
+      nombre: Sevilla
+      restaurantes:
+        categoria: Bar de tapas
+        direccion: Calle Eslava 3 41002 Sevilla
+        id: r1
+        nombre: Eslava
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
